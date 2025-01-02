@@ -8,10 +8,12 @@ public class Main {
       System.exit(1);
     }
 
-    String pattern = args[1];  
+    String pattern = args[1];
+      System.out.println(pattern);
     Scanner scanner = new Scanner(System.in);
     String inputLine = scanner.nextLine();
 
+      System.out.println(pattern.length());
     System.err.println("Logs from your program will appear here!");
 
      if (matchPattern(inputLine, pattern)) {
@@ -22,14 +24,15 @@ public class Main {
   }
 
   public static boolean matchPattern(String inputLine, String pattern) {
-    if (pattern.length() == 1) {
-        if("\\d".equals(pattern)) {
-            return isContainDigit(inputLine);
-        }
-      return inputLine.contains(pattern);
-    } else {
-      throw new RuntimeException("Unhandled pattern: " + pattern);
-    }
+      if ("\\d".equals(pattern)) {
+          return isContainDigit(inputLine);
+      } else if (pattern.length() == 1) {
+          return inputLine.contains(pattern);
+      } else {
+          throw new RuntimeException("Unhandled pattern: " + pattern);
+      }
+
+
   }
 
   public static boolean isContainDigit(String inputLine) {
