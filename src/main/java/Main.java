@@ -26,7 +26,10 @@ public class Main {
   public static boolean matchPattern(String inputLine, String pattern) {
       if ("\\d".equals(pattern)) {
           return isContainDigit(inputLine);
-      } else if (pattern.length() == 1) {
+      }
+      else if("\\w".equals(pattern)){
+          return isContainAlphaNumeric(inputLine);
+      }else if (pattern.length() == 1) {
           return inputLine.contains(pattern);
       } else {
           throw new RuntimeException("Unhandled pattern: " + pattern);
@@ -37,5 +40,9 @@ public class Main {
 
   public static boolean isContainDigit(String inputLine) {
     return inputLine.matches(".*\\d.*");
+  }
+
+  public static boolean isContainAlphaNumeric(String inputLine) {
+    return inputLine.matches(".*\\w.*");
   }
 }
