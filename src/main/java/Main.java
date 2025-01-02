@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args){
     if (args.length != 2 || !args[0].equals("-E")) {
-      System.out.println("Usage: ./your_program.sh -E <pattern>");
+      System.out.println("Usage: ./program.sh -E <pattern>");
       System.exit(1);
     }
 
@@ -15,13 +15,11 @@ public class Main {
     // You can use print statements as follows for debugging, they'll be visible when running tests.
     System.err.println("Logs from your program will appear here!");
 
-    // Uncomment this block to pass the first stage
-    // 
-    // if (matchPattern(inputLine, pattern)) {
-    //     System.exit(0);
-    // } else {
-    //     System.exit(1);
-    // }
+     if (matchPattern(inputLine, pattern)) {
+         System.exit(0);
+     } else {
+         System.exit(1);
+     }
   }
 
   public static boolean matchPattern(String inputLine, String pattern) {
