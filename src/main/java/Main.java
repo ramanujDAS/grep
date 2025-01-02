@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Main {
   public static void main(String[] args){
@@ -29,6 +30,9 @@ public class Main {
       }
       else if("\\w".equals(pattern)){
           return isContainAlphaNumeric(inputLine);
+      }
+      else if(isPositiveChar(pattern)){
+          return isContainWord(inputLine, pattern);
       }else if (pattern.length() == 1) {
           return inputLine.contains(pattern);
       } else {
@@ -45,4 +49,15 @@ public class Main {
   public static boolean isContainAlphaNumeric(String inputLine) {
     return inputLine.matches(".*\\w.*");
   }
+
+    public static boolean isContainWord(String inputLine, String pattern) {
+        String regex = pattern.substring(1, pattern.length() - 1);
+        return regex.chars().anyMatch(ch -> inputLine.contains(String.valueOf((char) ch)));
+    }
+
+
+    private static boolean isPositiveChar(String pattern) {
+        return pattern.charAt(0) == '[' && pattern.charAt(pattern.length() - 1) == ']';
+    }
+
 }
