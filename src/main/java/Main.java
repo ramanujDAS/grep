@@ -12,7 +12,6 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     String inputLine = scanner.nextLine();
 
-    // You can use print statements as follows for debugging, they'll be visible when running tests.
     System.err.println("Logs from your program will appear here!");
 
      if (matchPattern(inputLine, pattern)) {
@@ -24,9 +23,16 @@ public class Main {
 
   public static boolean matchPattern(String inputLine, String pattern) {
     if (pattern.length() == 1) {
+        if("\\d".equals(pattern)) {
+            return isContainDigit(inputLine);
+        }
       return inputLine.contains(pattern);
     } else {
       throw new RuntimeException("Unhandled pattern: " + pattern);
     }
+  }
+
+  public static boolean isContainDigit(String inputLine) {
+    return inputLine.matches(".*\\d.*");
   }
 }
