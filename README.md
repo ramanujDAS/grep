@@ -1,39 +1,75 @@
-[![progress-banner](https://backend.codecrafters.io/progress/grep/59768159-43a8-4775-86e7-220624105312)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+# Build Your Own Grep Tool
 
-This is a starting point for Java solutions to the
-["Build Your Own grep" Challenge](https://app.codecrafters.io/courses/grep/overview).
+A Java implementation of the grep command line tool, built as part of the CodeCrafters challenge.
 
-[Regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
-(Regexes, for short) are patterns used to match character combinations in
-strings. [`grep`](https://en.wikipedia.org/wiki/Grep) is a CLI tool for
-searching using Regexes.
+## Project Description
 
-In this challenge you'll build your own implementation of `grep`. Along the way
-we'll learn about Regex syntax, how parsers/lexers work, and how regular
-expressions are evaluated.
+This project implements a simplified version of the `grep` (Global Regular Expression Print) command line tool. Grep is a powerful utility that searches for text patterns using regular expressions in files or standard input.
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+## Features
 
-# Passing the first stage
+- Search for text patterns using regular expressions
+- Process input files and display matching lines
+- Support for basic regular expression patterns
 
-The entry point for your `grep` implementation is in `src/main/java/Main.java`.
-Study and uncomment the relevant code, and push your changes to pass the first
-stage:
+## Getting Started
 
-```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
-```
+### Prerequisites
 
-Time to move on to the next stage!
+- Java 11 or higher
+- Maven
 
-# Stage 2 & beyond
+### Building the Project
 
-Note: This section is for stages 2 and beyond.
+To build the project, run:
 
-1. Ensure you have `mvn` installed locally
-1. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main/java/Main.java`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+```bash
+mvn clean package
+java -jar codecrafters-grep.jar [pattern] [file...]
+
+java -jar codecrafters-grep.jar "hello" input.txt
+
+
+├── src/
+│   ├── main/
+│   │   └── java/
+│   └── test/
+│       └── java/
+├── pom.xml
+└── README.md
+
+
+
+Development
+This project is built using:
+
+Java
+
+Maven for dependency management and building
+
+JUnit for testing (if applicable)
+
+Contributing
+Feel free to submit issues and enhancement requests.
+
+License
+Add your chosen license here
+
+
+This README includes:
+1. A clear project title and description
+2. Setup instructions
+3. Usage examples
+4. Project structure
+5. Development information
+
+You can customize this template by:
+- Adding specific implementation details
+- Including more detailed usage examples
+- Adding screenshots if available
+- Specifying any special features of your implementation
+- Adding contribution guidelines
+- Including a license section
+
+Would you like me to modify any section or add more specific details for your implementation?
+
