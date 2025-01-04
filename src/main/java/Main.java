@@ -15,6 +15,7 @@ public class Main {
     String inputLine = scanner.nextLine();
 
       System.out.println(pattern.length());
+      System.out.println(inputLine);
     System.err.println("Logs from your program will appear here!");
 
      if (matchPattern(inputLine, pattern)) {
@@ -57,7 +58,10 @@ public class Main {
 
 
     private static boolean isPositiveChar(String pattern) {
-        return pattern.charAt(0) == '[' && pattern.charAt(pattern.length() - 1) == ']';
+        return pattern.startsWith("[") && pattern.endsWith("]");
     }
 
+    private static boolean isNegativeChar(String pattern) {
+        return pattern.startsWith("[^") && pattern.endsWith("]");
+    }
 }
