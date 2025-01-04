@@ -44,11 +44,11 @@ public class Main {
   }
 
   public static boolean isContainDigit(String inputLine) {
-    return inputLine.matches(".*\\d.*");
+      return inputLine.chars().filter(Character::isDigit).findFirst().isPresent();
   }
 
   public static boolean isContainAlphaNumeric(String inputLine) {
-    return inputLine.matches(".*\\w.*");
+    return inputLine.chars().filter(Character::isLetterOrDigit).findFirst().isPresent();
   }
 
     public static boolean isContainWord(String inputLine, String pattern) {
