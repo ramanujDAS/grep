@@ -64,4 +64,7 @@ public class Main {
     private static boolean isNegativeChar(String pattern) {
         return pattern.startsWith("[^") && pattern.endsWith("]");
     }
+
+
+
 }
