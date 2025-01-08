@@ -25,9 +25,9 @@ To build the project, run:
 
 ```bash
 mvn clean package
-java -jar codecrafters-grep.jar [pattern] [file...]
+java -jar grep.jar [pattern] [file...]
 
-java -jar codecrafters-grep.jar "hello" input.txt
+java -jar grep.jar "hello" input.txt
 
 
 ├── src/
